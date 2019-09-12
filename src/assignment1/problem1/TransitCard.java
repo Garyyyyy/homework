@@ -1,4 +1,4 @@
-package assignment1.transit;
+package assignment1.problem1;
 
 public class TransitCard {
     static final int minDepositDollarAmount = 5;

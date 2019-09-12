@@ -1,4 +1,4 @@
-package assignment1.transit;
+package assignment1.problem1;
 
 import java.util.HashMap;
 import java.util.Map;
