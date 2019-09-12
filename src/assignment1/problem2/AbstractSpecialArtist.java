@@ -9,8 +9,8 @@ public abstract class AbstractSpecialArtist extends AbstractArtist{
     private List<String> multimedia;
 
 
-    public AbstractSpecialArtist(String firstName, String lastName, int age) {
-        super(firstName, lastName, age);
+    public AbstractSpecialArtist(String firstName, String lastName) {
+        super(firstName, lastName);
         this.movies = new ArrayList<>();
         this.series = new ArrayList<>();
         this.multimedia = new ArrayList<>();

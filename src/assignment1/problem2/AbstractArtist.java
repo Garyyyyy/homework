@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public abstract class AbstractArtist {
+    private final int minAge = 0;
+    private final int maxAge = 128;
 
     private String firstName;
     private String lastName;
@@ -12,11 +14,9 @@ public abstract class AbstractArtist {
     private List<String> Awards;
 
 
-    public AbstractArtist(String firstName, String lastName, int age) {
+    public AbstractArtist(String firstName, String lastName) {
         this.firstName = firstName;
         this.lastName = lastName;
-        this.age = age;
-        this.generes = generes;
         Awards = new ArrayList<>();
     }
 
@@ -40,8 +40,13 @@ public abstract class AbstractArtist {
         return age;
     }
 
-    public void setAge(int age) {
-        this.age = age;
+    public boolean setAge(int age) {
+        if(isValidAge(age)){
+            this.age = age;
+            return true;
+        }
+        return false;
+
     }
 
     public String getGeneres() {
@@ -58,5 +63,9 @@ public abstract class AbstractArtist {
 
     public void addAwards(String award){
         this.Awards.add(award);
+    }
+
+    public boolean isValidAge(int age){
+        return age >= 0 && age <= 128;
     }
 }
