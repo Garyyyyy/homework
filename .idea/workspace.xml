@@ -3,15 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="043e1d7c-11a2-49b0-aa96-0b0dc1c3fcbc" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assignment1/problem2/AbstractArtist.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assignment1/problem2/AbstractArtist.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assignment1/problem2/AbstractSpecialArtist.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assignment1/problem2/AbstractSpecialArtist.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assignment1/problem2/Actors.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assignment1/problem2/Actors.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assignment1/problem2/Dancer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assignment1/problem2/Dancer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assignment1/problem2/FilmMaker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assignment1/problem2/FilmMaker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assignment1/problem2/Musician.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assignment1/problem2/Musician.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assignment1/problem2/Painter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assignment1/problem2/Painter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assignment1/problem2/Photographer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assignment1/problem2/Photographer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assignment1/problem2/Poet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assignment1/problem2/Poet.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -80,7 +71,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1568264660059</updated>
-      <workItem from="1568264666859" duration="10554000" />
+      <workItem from="1568264666859" duration="19398000" />
     </task>
     <servers />
   </component>
