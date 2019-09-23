@@ -1,10 +1,10 @@
 {
-  "width": 72,
+  "width": 36,
   "height": 72,
   "unit": "inch",
   "shelves": 7,
-  "drawers": 2,
-  "Color": "",
-  "Mount": "floor",
-  "Budget": 100
+  "drawers": 0,
+  "color": "",
+  "mount": "floor",
+  "budget": 100
 }

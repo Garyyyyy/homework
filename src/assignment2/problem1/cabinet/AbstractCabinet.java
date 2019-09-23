@@ -1,6 +1,8 @@
 package assignment2.problem1.cabinet;
 
 import assignment2.problem1.AbstractFurniture;
+import assignment2.problem1.door.AbstractDoor;
+import assignment2.problem1.drawer.AbstractDrawer;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,7 +16,9 @@ public abstract class AbstractCabinet extends AbstractFurniture {
     private boolean wallMount;
     private boolean standardWallMountRail;
     private boolean wallFixtureForEarthquakeSafety;
-//    private List<String> addtionals;
+    private List<AbstractDoor> doorList;
+
+
 
     protected AbstractCabinet(){}
 
@@ -25,7 +29,7 @@ public abstract class AbstractCabinet extends AbstractFurniture {
         this.feetRequired = feetRequired;
         this.wallMount = wallMount;
         this.standardWallMountRail = standardWallMountRail;
-//        this.addtionals = new ArrayList<>();
+        this.doorList = new ArrayList<>();
         this.wallFixtureForEarthquakeSafety = wallFixtureForEarthquakeSafety;
 
     }
@@ -102,6 +106,10 @@ public abstract class AbstractCabinet extends AbstractFurniture {
         super.addColors(color);
     }
 
+    public List<AbstractDoor> getDoorList() {
+        return doorList;
+    }
+
     public String getFurnitureType(){
         return super.getFurnitureType();
     }
@@ -114,12 +122,47 @@ public abstract class AbstractCabinet extends AbstractFurniture {
         this.standardWallMountRail = standardWallMountRail;
     }
 
-//    public List<String> getAddtionals() {
-//        return addtionals;
-//    }
-//
-//    public void addOneAddtional(String additional) {
-//        this.addtionals.add(additional);
-//    }
+    public List<String> getAdditionals() {
+        return super.getAdditionals();
+    }
+
+    public void addAdditionals() {
+        if(isWallFixtureForEarthquakeSafety()){
+            super.addAdditionals("Wall fixture attachment for earthquake safety");
+        }
+        if(isStandardWallMountRail()){
+            super.addAdditionals("Standard wall-mount rails");
+        }
+        if(getSize().equals("Quarter") && getDepth() >= 18){
+            super.addAdditionals("18” drawers");
+        }
+    }
+
+    public boolean hasNumOfShelvesAndDrawers(int numOfShelves, int numOfDrawers){
+        for(int[] pair : this.shelvesAndDrawers){
+            if(pair[0] >= numOfShelves && pair[1] >= numOfDrawers){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public boolean checkMountType(String mountType){
+        mountType = mountType.toLowerCase();
+        if(mountType == null || (mountType.equals("wall") && wallMount) || mountType.equals("floor") || mountType.equals("")){
+            return true;
+        }
+        return false;
+    }
+
+    public void matchDoor(String targetColor, List<AbstractDoor> doors, List<AbstractDrawer> drawers){
+        for(AbstractDoor door : doors){
+            if(door.getHeight() == this.getHeight() && door.getWidth() == this.getWidth() && door.checkColors(targetColor)){
+                door.matchDrawer(targetColor, drawers);
+                door.addAdditionals();
+                this.doorList.add(door);
+            }
+        }
+    }
 
 }

@@ -2,6 +2,8 @@ package assignment2.problem1.drawer;
 
 import assignment2.problem1.AbstractFurniture;
 
+import java.util.List;
+
 
 public abstract class AbstractDrawer extends AbstractFurniture {
     private boolean handleRequired;
@@ -53,5 +55,16 @@ public abstract class AbstractDrawer extends AbstractFurniture {
 
     public void addColors(String color) {
         super.addColors(color);
+    }
+
+    public List<String> getAddtionals() {
+        return super.getAdditionals();
+    }
+
+    public void addAddtionals() {
+        if(handleRequired && !handleIncluded){
+            super.addAdditionals("Drawer handles");
+        }
+
     }
 }

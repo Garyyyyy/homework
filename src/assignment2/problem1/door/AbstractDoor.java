@@ -1,10 +1,15 @@
 package assignment2.problem1.door;
 
 import assignment2.problem1.AbstractFurniture;
+import assignment2.problem1.drawer.AbstractDrawer;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public abstract class AbstractDoor extends AbstractFurniture {
     private boolean handleRequired;
     private boolean handleIncluded;
+    private List<AbstractDrawer> drawerList;
 
     protected AbstractDoor(){};
 
@@ -12,6 +17,7 @@ public abstract class AbstractDoor extends AbstractFurniture {
         super(width,height,lineName,size, "door");
         this.handleRequired = handleRequired;
         this.handleIncluded = handleIncluded;
+        this.drawerList = new ArrayList<>();
     }
 
     public int getWidth() {
@@ -52,5 +58,27 @@ public abstract class AbstractDoor extends AbstractFurniture {
 
     public void addColors(String color) {
         super.addColors(color);
+    }
+
+    public List<String> getAddtionals() {
+        return super.getAdditionals();
+    }
+
+    public void addAdditionals() {
+
+        if(handleRequired && !handleIncluded){
+            super.addAdditionals("Door handles");
+        }
+        super.addAdditionals("Door hinges");
+
+    }
+
+    public void matchDrawer(String targetColor, List<AbstractDrawer> drawers){
+        for(AbstractDrawer drawer : drawers){
+            if(drawer.getHeight() < this.getHeight() && drawer.getWidth() <= this.getWidth() && drawer.checkColors(targetColor)){
+                this.drawerList.add(drawer);
+                drawer.addAddtionals();
+            }
+        }
     }
 }

@@ -1,7 +1,9 @@
 package assignment2.problem1;
 
 
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 public abstract class AbstractFurniture {
@@ -12,7 +14,7 @@ public abstract class AbstractFurniture {
     private String lineName;
     private String size;
     private Set<String> colors;
-
+    private List<String> additionals;
     protected AbstractFurniture(){}
 
     protected AbstractFurniture(int width, int height, String lineName, String size, String furnitureType) {
@@ -21,6 +23,7 @@ public abstract class AbstractFurniture {
         this.lineName = lineName;
         this.size = size;
         colors = new HashSet<>();
+        this.additionals = new ArrayList<>();
         this.furnitureType = furnitureType;
     }
 
@@ -77,10 +80,21 @@ public abstract class AbstractFurniture {
     }
 
     public boolean checkColors(String color) {
+        if(color == null || color.equals("")){
+            return true;
+        }
         return colors.contains(color);
     }
 
     public void addColors(String color) {
         this.colors.add(color);
+    }
+
+    public List<String> getAdditionals() {
+        return additionals;
+    }
+
+    public void addAdditionals(String addtional) {
+        this.additionals.add(addtional);
     }
 }
